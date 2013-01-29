@@ -1,7 +1,7 @@
 {
   "name": "grunt-gss-pull",
   "description": "The best grunt plugin ever.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/motherjones/grunt-gss-pull",
   "author": {
     "name": "Ben Breedlove",
