@@ -30,14 +30,21 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     gss_pull: {
-      default_options: {
+      super_simple: {
+        options: {
+        },
+        files: {
+          'tmp/super_simple': ['0AswaDV9q95oZdE4wVHFZYXlic0tHaU5QNWRqYzUxU0E'],
+        },
+      },
+      single_sheet: {
         options: {
         },
         files: {
           'tmp/single_sheet': ['response://docs.google.com/spreadsheet/pub?key=0AiK02J6OppqxdE5ycWRNOXJyNk40WXBrS2JGUUdRUHc&output=html'],
         },
       },
-      custom_options: {
+      multi_sheet: {
         options: {
         },
         files: {

@@ -137,12 +137,11 @@ module.exports = function(grunt) {
             Promise.all( promises ).then(function(results) {
             // Write the destination file.
                 if (results.length === 1) {
-                    grunt.file.write(fileObj.dest, 'var gdoc_data = ' 
-                        + JSON.stringify(results[0])
+                    var key = Object.keys(results[0])[0];
+                    grunt.file.write(fileObj.dest, JSON.stringify(results[0][key])
                     );
                 } else {
-                    grunt.file.write(fileObj.dest, 'var gdoc_data = ' 
-                        + JSON.stringify(results)
+                    grunt.file.write(fileObj.dest, JSON.stringify(results)
                     );
                 }
 
