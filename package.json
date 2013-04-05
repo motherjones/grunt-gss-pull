@@ -28,8 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "node-promise": "~0.5.5",
-    "http": "0.0.0"
+    "node-promise": "~0.5.5"
   },  
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1rc5",
