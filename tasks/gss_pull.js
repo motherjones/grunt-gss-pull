@@ -61,9 +61,12 @@ module.exports = function(grunt) {
 
         var fetch_each_sheet = function(sheet, key) {
             var promise = new Promise.Promise();
-            var sheet_id = sheet.link[3].href.substr( 
-                sheet.link[3].href.length - 3, 3
-            );
+
+            // It is a bit arbitrary, but the best way to get the sheet ID
+            // is to use the last item link and it is the last part of the URL.
+            var sheet_link_parts = sheet.link[sheet.link.length - 1].href.split('/');
+            var sheet_id = sheet_link_parts[sheet_link_parts.length - 1];
+
             var url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet_id + "/public/values?alt=json";
             http.get(url, function(res) {
                 var response_data = '';
@@ -102,7 +105,7 @@ module.exports = function(grunt) {
                      element[ column_names[j] ] = cell.$t;
                    }
                }
-               if(element.rowNumber === undefined) { 
+               if(element.rowNumber === undefined) {
                    element.rowNumber = i + 1;
                }
                elements.push(element);
